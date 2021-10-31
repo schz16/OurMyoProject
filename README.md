@@ -1,5 +1,5 @@
 # OurMyoProject: Myocardial Infarction Complications 
-Susana Chavez, Melani Rodriguez, Dylan Wegmann, Natalie Blanco
+Susana Chavez, Melani Rodriguez, Dylan Wegmann, Natalie Blanco, Alexandria Garcia
 # Dataset info: 
 ## Description: 
 Myocardial Infarction (MI) is a tricky disease that is highly prevalent in all countries. The way it affects the individual, presents itself, and the time at which it occurs differs in virtually every patient. Many individuals die from acute MI before ever arriving at the hospital, some have complications and some do not, and some complications worsen the condition and some do not. All of these factors make MI one of the most challenging obstacles of modern medicine, and thus any sort of indication of onset of disease would benefit the medical community greatly. This dataset contains information that can be helped to predict onset, which will help identify it in future patients. This information could save millions of lives that are currently at great risk.  
