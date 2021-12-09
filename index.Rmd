@@ -1,0 +1,93 @@
+---
+title: 'OurMyoProject'
+pagetitle: 'Team 10'
+output: 
+  html_document: 
+    css: "styles.css"
+---
+
+```{R echo=F, eval=F}
+#to build this website into the _site directory, run
+rmarkdown::site_generator()
+```
+ 
+<img src="heartattack.png" style=width:40%>
+
+<br>
+
+# SDS322 Final Project: Myocardial Infarction
+  
+</br>
+
+## Intro
+#### Myocardial infarction (heart attack) is caused by a blood clot in the arteries of the heart. Clots cause a disturbance in blood supply to the heart, leading to a loss of oxygen to the heart muscle causing severe damage. Blockage is caused by a buildup of plaque in the arteries, which is formed by cholesterol and other deposits. Heart attacks are the number one cause of death globally due to their intrinsic properties that make it difficult to predict the onset of complications after suffering an episode.
+
+
+## Motivation
+#### It is difficult for even the most experienced specialist to anticipate the development of complications from heart attacks. Therefore, foreseeing the development of a complication is key to taking the necessary preventative measures for the individual to avoid the worsening of the condition or possible death.
+
+
+## Data
+#### The MI data consists of 124 variables. Columns 2-112 are the patients’ input data for prediction and columns 113-124 are possible complications. The data was cleaned of any “?” characters and missing values for each column imputed  by the median. 
+
+
+## Exploratory Analysis 
+#### We conduct exploratory analysis on our data to discover any patterns in the data set.
+
+<img src="correlationmatrix.png" style=width:60%>
+
+#### We see that there is are no patterns observed between age, white blood cell count and the rate of red blood cells settling in a blood sample. 
+
+<img src="age.png" style=width:60%>
+
+#### We observed that the average age of a patient is around 62 years old.
+
+<img src="gender.png" style=width:60%>
+
+#### We observed that more men are reported as a patient in this dataset.
+
+<img src="diabetes.png" style=width:60%>
+
+#### The incidence of  patients with diabetes was much lower than those without.
+
+## Hypotheses
+#### 1. Does age affect the likelihood of developing complications from MI?
+#### 2. Does gender affect the likelihood of developing complications from MI?
+#### 3. Does having diabetes affect the likelihood of developing complications from MI?
+
+## Modeling - SVM
+#### With the SVM  model we are trying to classify the data into two distinct classes in space with the objective of distancing the two classes as much as possible in space. Using the SVM, we compared the combined input variables to each complication (output variable) to determine which complication related to myocardial infarction resulted in the most accurate predictions. The following images are only a few confusion matrices we did to evaluation of the model. Refer to our portfolio and/or repository for the rest of the matrices and accuracy scores. 
+
+<img src="SVM1.png" style=width:50%>
+
+<img src="SVM2.png" style=width:50%>
+
+<img src="SVM3.png" style=width:50%>
+
+<img src="SVM4.png" style=width:50%>
+
+#### As you can see, each evaluation only provides values for true negatives and false negatives. For each true negative, it can be concluded that we predicted that the patient that suffered from myocardial infarction would not have the associated complication, and we were correct in that prediction. For each false negative, we predicted that the patient would not have the associated complication, but they actually did.
+
+## Modeling - Decision Tree
+#### Given the age and gender of a patient, will they develop myocardial infarction complications or not?
+#### Although this question is narrow, we wanted to see the effect of age and gender on complications because our research tells us that these are significant variables. This decision tree allowed us to visualize the decision making process for our question.
+ 
+<img src="decisiontree.png" style=width:50%>
+
+#### First Split: Age 56.5, Second Split: Age 49.5, 81.5, Gini: 0.18
+#### A gini of 0 means it can be perfectly classified.
+
+## Limitations 
+#### SVM doesn’t perform well on large datasets. The immense amount of predictor variables makes it hard to confidently determine which ones (or combinations of them) accurately predict complications. 
+
+## Future Analyses
+#### In the future, it would be better to simplify the dataset to focus and analyze the best predictors of myocardial infarction, rather than the combined effects. Our models speak to the complexity of considering all the different factors that play into myocardial infarction complications. We explored some of the most important factors and were able to see how they play into complications. 
+
+## Conclusion
+#### We used an Support Vector Machine (SVM) to find a hyperplane which classifies the data points. We looked at 110 independent variables such as age, gender, and stage of Ventricular fibrillation at which patient was admitted to intensive care unit to determine if there is plausible predictability for doctors to make from independent patient variables. As discussed earlier, it is difficult for even the most experienced doctors to know which complications a patient may have after a myocardial infarction. We first found accuracy scores to see how well the model holds up. The accuracy scores pointed to the complications dealing with tachycardia being best predicted by the model. Thereby testing the independent variables available to us against each of the 12 complications we have data for, the model can predict complications and we can test its accuracy.  The model best predicts for the complication Supraventricular tachycardia, with varying degrees of reliability for the other 11 possible complications. Given the results already explained, it would also be wise to not use the model for the complication, chronic heart failure, and the model does not suit the compilation lethal cause well. Essentially, the model helps us classify external, independent patient variables into the different myocardial infarction complications. 
+
+### Link to our repository: https://github.com/schz16/OurMyoProject
+### Link to our dataset: https://archive.ics.uci.edu/ml/machine-learning-databases/00579/
+
+
+---
